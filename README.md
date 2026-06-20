@@ -1,107 +1,92 @@
+# 📈 Smart Price Monitor
 
-# Smart-Product-Price-Monitor-
-Smart Price Monitor is a FastAPI-based competitor pricing platform that helps businesses track, compare, and analyze product prices across marketplaces. It features JWT authentication, product management, price history tracking, and interactive analytics dashboards.
----
+A modern **FastAPI-based competitor price monitoring platform** that helps businesses track product prices, compare competitor pricing, visualize price trends, and manage products through an interactive dashboard.
 
-## Features
-
-### Authentication
-
-* User Registration
-* User Login
-* JWT-Based Authentication
-* Protected Routes
-* Logout Functionality
-
-### Product Management
-
-* Add Products
-* Edit Products
-* Delete Products
-* View Product Catalog
-
-### Price Monitoring
-
-* Track Your Product Price
-* Monitor Amazon Prices
-* Monitor Flipkart Prices
-* Compare Competitor Pricing
-* Identify Better Pricing Opportunities
-
-### Price Analytics
-
-* Historical Price Tracking
-* Automatic Price History Updates
-* Interactive Trend Visualization
-* Competitor Comparison Charts
-
-### Dashboard
-
-* Responsive Interface
-* Product Statistics
-* Analytics Widgets
-* Interactive Charts
+Built with **FastAPI, SQLAlchemy, JWT Authentication, SQLite, Jinja2, and Chart.js**.
 
 ---
 
-## Screenshots
+## 🚀 Features
 
-### Login Page
+### 🔐 Authentication System
+- User Signup
+- User Login
+- JWT-based Authentication
+- Secure Session Handling
+- Logout Functionality
 
-![Login Page](screenshots/login.png)
+### 📦 Product Management (CRUD)
+- Add new products
+- Edit existing products
+- Delete products
+- View tracked products in dashboard
 
-### Registration Page
+### 💹 Price Monitoring
+Track product prices across:
+- Your Price
+- Amazon Price
+- Flipkart Price
 
-![Registration Page](screenshots/signup.png)
+Automatically identify:
+- ✅ Best Price
+- ⚠ Competitor Cheaper
+- 📉 Price Drops
 
-### Dashboard
+### 📊 Price History Analytics
+- Historical price tracking
+- Automatic history update on every product edit
+- Interactive line charts using Chart.js
+- Trend visualization for competitor comparison
 
-![Dashboard](screenshots/dashboard.png)
-
-### Add Product
-
-![Add Product](screenshots/add-product.png)
-
-### Edit Product
-
-![Edit Product](screenshots/edit-product.png)
-
-### Price Analytics
-
-![Price Analytics](screenshots/chart.png)
-
----
-
-## Technology Stack
-
-### Backend
-
-* FastAPI
-* Python
-* SQLAlchemy
-* SQLite
-* JWT Authentication
-* Passlib
-
-### Frontend
-
-* HTML
-* CSS
-* JavaScript
-* Jinja2
-* Chart.js
-
-### Tools
-
-* VS Code
-* Git
-* GitHub
+### 🎨 Modern Dashboard UI
+- Responsive dark theme
+- Glassmorphism cards
+- Analytics widgets
+- Clean admin dashboard experience
 
 ---
 
-## Project Structure
+# 🖥️ Dashboard Preview
 
-```text
+## Login Page
+Secure JWT login system.
+
+## Main Dashboard
+Includes:
+- Product statistics
+- Price analytics chart
+- Product cards
+- CRUD operations
+
+---
+
+# 🛠 Tech Stack
+
+## Backend
+- FastAPI
+- Python 3
+- SQLAlchemy ORM
+- SQLite
+- JWT Authentication
+- Passlib / Bcrypt
+
+## Frontend
+- HTML5
+- CSS3
+- Jinja2 Templates
+- JavaScript
+- Chart.js
+
+## Development Tools
+- VS Code
+- Git
+- GitHub
+
+---
+
+# 📂 Project Structure
+
+```bash
 smart-price-monitor/
 │
 ├── main.py
@@ -110,135 +95,173 @@ smart-price-monitor/
 ├── models.py
 ├── schemas.py
 ├── requirements.txt
+├── README.md
 │
 ├── templates/
-│   ├── login.html
-│   ├── signup.html
 │   ├── index.html
-│   └── edit.html
+│   ├── edit.html
+│   ├── login.html
+│   └── signup.html
 │
-├── static/
-│   └── style.css
-│
-└── screenshots/
+└── static/
+    └── style.css
 ```
 
-## Installation
+---
 
-### Clone Repository
+# ⚙️ Installation Guide
+
+## 1. Clone Repository
 
 ```bash
-git clone https://github.com/<username>/smart-price-monitor.git
+git clone https://github.com/Rohitarya0605/Smart-price-monitor.git
 cd smart-price-monitor
 ```
 
-### Create Virtual Environment
+---
 
-Windows
+## 2. Create Virtual Environment
 
+### Windows
 ```bash
 python -m venv venv
 venv\Scripts\activate
 ```
 
-Linux/macOS
-
+### Linux / Mac
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-### Install Dependencies
+---
+
+## 3. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Run Application
+---
+
+## 4. Run Application
 
 ```bash
 uvicorn main:app --reload
 ```
 
-### Open Browser
+---
 
-```text
+## 5. Open Browser
+
+```bash
 http://127.0.0.1:8000
 ```
 
 ---
 
-## Database Schema
+# 🧠 Database Schema
 
-### Users
-
-| Field           | Type    |
-| --------------- | ------- |
-| id              | Integer |
-| username        | String  |
-| hashed_password | String  |
-
-### Products
-
-| Field          | Type    |
-| -------------- | ------- |
-| id             | Integer |
-| product_name   | String  |
-| your_price     | Float   |
-| amazon_price   | Float   |
-| flipkart_price | Float   |
-
-### Price History
-
-| Field          | Type    |
-| -------------- | ------- |
-| id             | Integer |
-| product_id     | Integer |
-| day            | String  |
-| your_price     | Float   |
-| amazon_price   | Float   |
-| flipkart_price | Float   |
+## Users Table
+| Field | Type |
+|---|---|
+| id | Integer |
+| username | String |
+| hashed_password | String |
 
 ---
 
-## Workflow
-
-1. User registers or logs in.
-2. JWT authentication validates access.
-3. User adds products and pricing details.
-4. Product data is stored in the database.
-5. Price history is automatically recorded.
-6. Updates generate new historical entries.
-7. Analytics charts visualize pricing trends.
-
----
-
-## Future Enhancements
-
-* Automated Web Scraping
-* Email Price Alerts
-* AI-Based Price Prediction
-* Product Search and Filtering
-* CSV/PDF Export
-* PostgreSQL Integration
-* Cloud Deployment
-* Multi-User Product Ownership
+## Products Table
+| Field | Type |
+|---|---|
+| id | Integer |
+| product_name | String |
+| your_price | Float |
+| amazon_price | Float |
+| flipkart_price | Float |
 
 ---
 
-## Contributors
-
-* Sneha Pawar
-* Sneha Gadhave
-* Swayambhu Swami
-* Manavi Tamkhane
-* Rohit Arya
-* Nupur Patankar
-
-MIT ADT University, Pune
+## Price History Table
+| Field | Type |
+|---|---|
+| id | Integer |
+| product_id | Integer |
+| day | String |
+| your_price | Float |
+| amazon_price | Float |
+| flipkart_price | Float |
 
 ---
 
-## License
+# 🔄 Workflow
 
-This project is developed for educational and academic purposes.
+1. User signs up / logs in  
+2. JWT token generated  
+3. User accesses dashboard  
+4. Add product pricing details  
+5. Product stored in database  
+6. Price history automatically recorded  
+7. Every update creates new historical record  
+8. Chart reflects pricing trend  
+
+---
+
+# 📌 Use Cases
+
+This platform can be used by:
+
+- E-commerce businesses
+- Product managers
+- Pricing analysts
+- Competitor research teams
+- Marketplace sellers
+
+---
+
+# 🔮 Future Improvements
+
+Potential upgrades:
+
+- Real-time web scraping
+- Email alerts for price drops
+- AI-based price prediction
+- Product search and filtering
+- CSV / PDF export
+- Admin analytics dashboard
+- Multi-user product ownership
+- PostgreSQL deployment
+- Cloud deployment
+
+---
+
+# 📚 Learning Outcomes
+
+This project helped in understanding:
+
+- FastAPI backend development
+- Database relationships
+- CRUD operations
+- Authentication using JWT
+- ORM with SQLAlchemy
+- Data visualization
+- Full-stack project architecture
+- Git & GitHub workflow
+
+---
+
+# 👨‍💻 Author
+
+**Nupur Patankar, Rohit Arya, Sneha Pawar, Manavi Tamkhane, Sneha Gadhave, Swayambhu Swami**
+
+B.Tech Electronics & Communication Engineering  
+MIT ADT University, Pune  
+
+
+---
+
+# ⭐ Support
+
+If you found this project useful, consider starring the repository.
+
+---
